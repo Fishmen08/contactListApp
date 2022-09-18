@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import {API} from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import './App.css';
 
-function App() {
+
+
+function App({signOut}) {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    API.get('contactlistapi', './contacts/name')
+    .then(contactsResponse => console.log(contactsResponse))
+  }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    API.post('contactlistapi', '/contacts', {
+      body: {
+        name: name,
+        phone: phone
+      }
+    })
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Hello
+        <form onSubmit={handleSubmit}>
+          <input value={name} placeholder='Name' onChange={(e) => setName(e.target.value)} />
+          <input value={phone} placeholder='Phone Number' onChange={(e) => setPhone(e.target.value)} />
+          <button type='submit'>Add Contact</button>
+        </form>
+        <button onClick={signOut}>Sign Out</button>
       </header>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

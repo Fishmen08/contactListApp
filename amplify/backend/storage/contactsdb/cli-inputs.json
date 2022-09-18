@@ -1,0 +1,14 @@
+{
+  "resourceName": "contactsdb",
+  "tableName": "contactsdb",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "phone",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-contactslist-dev-95625-authRole",
+      "UnauthRoleArn": "arn:aws:iam::871544800644:role/amplify-contactslist-dev-95625-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::871544800644:role/amplify-contactslist-dev-95625-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-contactslist-dev-95625-deployment",
+      "UnauthRoleName": "amplify-contactslist-dev-95625-unauthRole",
+      "StackName": "amplify-contactslist-dev-95625",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:871544800644:stack/amplify-contactslist-dev-95625/576b3300-36e4-11ed-8f01-02ef1775d74e",
+      "AmplifyAppId": "dps26sgxnhuh2",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-contactslist-dev-95625-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "contactsliste7f9552f": {}
+      },
+      "function": {
+        "contactsfunction": {
+          "deploymentBucketName": "amplify-contactslist-dev-95625-deployment",
+          "s3Key": "amplify-builds/contactsfunction-4e784d435a4231443372-build.zip"
+        }
+      }
+    }
+  }
+}
